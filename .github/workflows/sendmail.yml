@@ -18,9 +18,9 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: Cambios realizados en la rama ${{ github.ref.split('/')[-1] }}
+          subject: Cambios realizados en la rama ${{ github.ref_name }}
           to: |
             renteria.alberto.c@gmail.com,
             yyamilecg2108@gmail.com
           from: avidrio39@gmail.com
-          body: Cambios realizados en la rama ${{ github.ref.split('/')[-1] }}
+          body: Cambios realizados en la rama ${{ github.ref_name }}
