@@ -9,24 +9,18 @@ jobs:
   send-email:
     runs-on: ubuntu-latest
 
-    steps:  
-      - name: Send mailer
-        if: ${{ always() }}
-        uses: devellany/send-mail@v1.0.2
+    steps:
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
         with:
-          host: smtp.google.com
-          # Optional port (defaults to 465)
-          port: 465
-          account: avidrio39@gmail.com
-          password: Yoamoelrap123?
-          sender: ducho
-          from: avidrio39@gmail.com
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Cambios realizados en la rama ${{ github.ref }}
           to: |
-           alberto.renteriac@iteso.mx,
-           yyamilecg2108@gmail.com
-          subject: Se hicieron cambios en la rama ${{ github.ref }}.
-          body: Se han pusheado cambios a la rama ${{ github.ref }}
-          # Optional content type (defaults to text/plain)
-          contentType: text/plain
-          # Optional attachment files (JSON type. require property 'path')
-          attachments: '[{"path":"README.md"}]'
+            alberto.renteriac@iteso.mx,
+            yyamilecg2108@gmail.com
+          from: avidrio39@gmail.com
+          body: Cambios realizados en la rama ${{ github.ref }}
