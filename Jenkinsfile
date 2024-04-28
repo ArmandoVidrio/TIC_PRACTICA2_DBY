@@ -5,7 +5,7 @@ pipeline {
         stage('Preparación') { // Etapa de preparación
             steps {
                 // Pasos o comandos a ejecutar en esta etapa
-                echo 'Iniciando el pipeline...'
+                echo 'Iniciando el pipeline despues del push...'
             }
         }
 
