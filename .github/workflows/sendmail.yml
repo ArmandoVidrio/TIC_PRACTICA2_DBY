@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feature_!
 
 jobs:
   send-email:
