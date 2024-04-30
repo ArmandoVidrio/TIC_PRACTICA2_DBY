@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - feature_!
+      - feature_1
 
 jobs:
   send-email:
@@ -22,6 +22,7 @@ jobs:
           subject: Cambios realizados en la rama ${{ github.ref_name }}
           to: |
             renteria.alberto.c@gmail.com,
-            yyamilecg2108@gmail.com
+            yyamilecg2108@gmail.com,
+            avidrio39@gmail.com
           from: avidrio39@gmail.com
           body: Cambios realizados en la rama ${{ github.ref_name }}
